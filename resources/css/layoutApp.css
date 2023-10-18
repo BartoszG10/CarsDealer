@@ -1,0 +1,183 @@
+:root {
+    --color1: 0, 0, 0;
+    --color2: 40, 42, 58;
+    --color3: 21, 0, 80;
+    --color4: 238, 238, 238;
+}
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+.spin:hover {
+    animation: spin 2s infinite linear;
+}
+
+.navbar {
+    text-shadow: #e0e0e0 1px 1px 0, 3px -3px 14px #ffffff;
+}
+.nav-item a {
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    color: #000000;
+    position: relative;
+    display: inline-block;
+    text-shadow: 4px 4px 4px rgba(255, 255, 255, 0.6);
+}
+.nav-item a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #ff0000;
+    top: 100%;
+    animation: out cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+
+.nav-item a:hover:before {
+    animation: in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    background-color: rgb(var(--color2));
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: rgb(var(--color4));
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    position: absolute;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: rgb(var(--color2));
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    position: fixed;
+    top: 50%;
+    z-index: 1;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+#main {
+    transition: margin-left 0.5s;
+    padding: 20px;
+}
+
+.bottom-info a {
+    padding: 10px 20px !important;
+}
+
+.bottom-info {
+    margin-top: auto;
+    margin-bottom: 15%;
+    width: 250px;
+    text-align: center;
+}
+
+.table {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 5px 5px 5px 1px rgb(var(--color2));
+}
+.table-title {
+    background-color: rgb(var(--color2), 0.1);
+    border-radius: 15px 15px 0 0;
+}
+
+.table th {
+    background-color: rgb(var(--color2), 0.8);
+    color: rgb(var(--color4));
+}
+
+.card-header {
+    background-color: rgb(var(--color2));
+    padding: 20px;
+    color: rgb(var(--color4));
+    font-size: 2rem;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+    .sidebar a {
+        font-size: 18px;
+    }
+}
+
+@keyframes in {
+    0% {
+        width: 0;
+        left: 0;
+        right: auto;
+    }
+    100% {
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
+}
+@keyframes out {
+    0% {
+        width: 100%;
+        left: auto;
+        right: 0;
+    }
+    100% {
+        width: 0;
+        left: auto;
+        right: 0;
+    }
+}
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

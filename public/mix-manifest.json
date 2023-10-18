@@ -1,0 +1,11 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/js/delete.js": "/js/delete.js",
+    "/js/users.js": "/js/users.js",
+    "/js/search.js": "/js/search.js",
+    "/css/app.css": "/css/app.css",
+    "/css/layoutHome.css": "/css/layoutHome.css",
+    "/css/layoutLogin.css": "/css/layoutLogin.css",
+    "/css/layoutApp.css": "/css/layoutApp.css",
+    "/css/style.css": "/css/style.css"
+}
